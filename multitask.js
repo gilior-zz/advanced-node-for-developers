@@ -1,7 +1,7 @@
 const https = require('https')
 const crypto = require('crypto');
 const fs = require('fs');
-
+process.env.UV_THREADPOOL_SIZE=5
 
 const start = Date.now();
 

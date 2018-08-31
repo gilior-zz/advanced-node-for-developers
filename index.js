@@ -31,7 +31,7 @@ function worker(req, res) {
     worker.onmessage = function (response) {
         // console.log(response)
         console.log('message',Date.now()-response.data.start, response.data.counter)
-        // res.send(''+message.data)
+        res.send(''+response.data.message)
     }
 
     worker.postMessage();

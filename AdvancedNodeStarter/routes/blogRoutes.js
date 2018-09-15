@@ -22,7 +22,7 @@ module.exports = app => {
 
     app.post('/api/blogs', requireLogin, clearCache, async (req, res) => {
         const {title, content} = req.body;
-
+        // req.session === {passport: {user: '5a85'}}
         const blog = new Blog({
             title,
             content,
@@ -39,3 +39,12 @@ module.exports = app => {
 
     });
 };
+
+() => {
+    fetch('/api/blogs', {
+        method: 'GET',
+        credentials: 'same-origin',
+        headers: {'Content-Type': 'application/json'},
+            })
+}
+
